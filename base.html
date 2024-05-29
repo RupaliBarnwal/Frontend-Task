@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS for layout -->
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+        #sidebar {
+            min-width: 250px;
+            max-width: 250px;
+        }
+        #sidebar.active {
+            min-width: 80px;
+            max-width: 80px;
+            display: none;
+        }
+        #content {
+            width: 100%;
+        }
+        .components {
+            padding: 20px 0;
+            border-bottom: 1px solid #47748b;
+        }
+        .components a {
+            padding: 10px;
+            font-size: 1.1em;
+            display: block;
+        }
+        .components a:hover {
+            background: #7386d5;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div  class="bg-light">
+        <nav class="navbar navbar-light">
+            <button class="navbar-toggler" type="button" id="sidebarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+        <ul id="sidebar" class="list-unstyled components">
+            <li>
+                <a href="#">Dashboard</a>
+            </li>
+            <li>
+                <a href="#">Projects</a>
+            </li>
+            <li>
+                <a href="#">Notifications</a>
+            </li>
+        </ul>
+    </div>
+   
+    <!-- Page Content -->
+    <div id="content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="dropdown">
+                <button class="btn border dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </div>
+            <a class="navbar-brand" href="#">/Super Admin</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Adarsh Santhosh</a>
+                    </li>
+                </ul>
+                <div class="dropdown">
+                    <button class="btn border dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
+                
+            </div>
+        </nav>
+    <div class="mt-5 p-4">
+    
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group mb-3" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary active" id="projects-tab">Projects</button>
+                <button type="button" class="btn btn-secondary" id="project-info-tab">Project Info</button>
+                <button type="button" class="btn btn-secondary" id="manage-access-tab">Manage Access</button>
+            </div>
+        </div>
+    
+        <div class="tab-content mt-4">
+            <!-- Projects Content -->
+            <div class="tab-pane active" id="projects">
+                <div class="d-flex justify-content-end">
+                    <form class="d-flex" role="search">
+                <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
+              </form>
+                     <nav aria-label="Page navigation example">
+                        <ul class="pagination ">
+                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                        </ul>
+                    </nav>
+                    
+                    </div>
+        
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Work Order No</th>
+                                    <th>Project Name</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                    <th>Customer Name</th>
+                                    <th>Status</th>
+                                    <th>Remarks</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>PROJ001</td>
+                                    <td>APT 1</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Adarsh</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>PROJ002</td>
+                                    <td>APT 2</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Adarsh</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+            </div>
+    
+            <!-- Project Info Content -->
+            <div class="tab-pane" id="project-info">
+                <div class="form-group d-flex justify-content-end">
+                    <div class="px-2"><label for="woNumber">WO Number</label></div>
+                    <select class="rounded col-md-2" id="woNumber">
+                        <option value="1">1</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+    
+                <div id="summaryBOM" class="mt-4">
+                    <h5 class="bg-light p-2">Summary BOM</h5>
+                    <div class="row mb-2">
+                        <div class="col-md-4">
+                            <label for="category">Category</label>
+                            <select class="form-control" id="category">
+                                <option value="Aspiration Ducting">Aspiration Ducting</option>
+                                <!-- Add more options as needed -->
+                            </select>
+                        </div>
+                        <div class="col-md-2 action-buttons">
+                            <button class="btn btn-success rounded-circle" onclick="addRow('summaryBOM')">+</button>
+                            <button class="btn btn-danger rounded-circle" onclick="removeRow(this)">-</button>
+                        </div>
+                    </div>
+                </div>
+    
+                <div id="design" class="mt-4">
+                    <h5 class="bg-light p-2">Design</h5>
+                    <div class="row mb-2">
+                        <div class="col-md-4">
+                            <label for="employees">Employees</label>
+                            <input type="text" class="form-control" id="employees" value="Adarsh">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="role">Role</label>
+                            <select class="form-control" id="role">
+                                <option value="Design Lead">Design Lead</option>
+                                <!-- Add more options as needed -->
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="startDate">Start Date</label>
+                            <input type="date" class="form-control" id="startDate">
+                        </div>
+                        <div class="col-md-2">
+                            <label for="endDate">End Date</label>
+                            <input type="date" class="form-control" id="endDate">
+                        </div>
+                        <div class="col-md-1 action-buttons">
+                            <button class="btn btn-success rounded-circle m-1" onclick="addRow('design')">+</button>
+                            <button class="btn btn-danger rounded-circle m-1" onclick="removeRow(this)">-</button>
+                        </div>
+                    </div>
+                </div>
+    
+                <div id="ppe" class="mt-4">
+                    <h5 class="bg-light p-2">PPE</h5>
+                    <div class="row mb-2">
+                        <div class="col-md-4">
+                            <label for="employees">Employees</label>
+                            <input type="text" class="form-control" id="employees" value="Adarsh">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="role">Role</label>
+                            <select class="form-control" id="role">
+                                <option value="PPE Lead">PPE Lead</option>
+                                <!-- Add more options as needed -->
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="startDate">Start Date</label>
+                            <input type="date" class="form-control" id="startDate">
+                        </div>
+                        <div class="col-md-2">
+                            <label for="endDate">End Date</label>
+                            <input type="date" class="form-control" id="endDate">
+                        </div>
+                        <div class="col-md-1 action-buttons">
+                            <button class="btn btn-success rounded-circle m-1" onclick="addRow('ppe')">+</button>
+                            <button class="btn btn-danger rounded-circle m-1" onclick="removeRow(this)">-</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Manage Access Content -->
+            <div class="tab-pane" id="manage-access">
+                <div class="form-group row">
+                    <div class="col-md-3">
+                        <label for="woNumber">WO Number</label>
+                        <select class="form-control" id="woNumberAccess">
+                            <option value="1">1</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="department">Department</label>
+                        <select class="form-control" id="department">
+                            <!-- Add department options here -->
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="employee">Employee</label>
+                        <select class="form-control" id="employee">
+                            <!-- Add employee options here -->
+                        </select>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                     <nav aria-label="Page navigation example">
+                        <ul class="pagination ">
+                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                        </ul>
+                    </nav>
+                    
+                    </div>
+                <table class="table mt-3 table-bordered">
+                    <thead>
+                        <tr class="bg-light">
+                            <th>Module Name</th>
+                            <th>Create</th>
+                            <th>Read</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-borderless ">
+                            <td>Module 1</td>
+                            <td><input type="checkbox" checked></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox" checked></td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr class="table-borderless ">
+                            <td>Module 2</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
